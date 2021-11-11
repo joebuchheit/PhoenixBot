@@ -25,7 +25,7 @@ class SettingsPage(QtWidgets.QWidget):
 
     def create_font(self, family, pt_size) -> QtGui.QFont:
         font = QtGui.QFont()
-        font.setPointSize(pt_size) if platform.system() == "Darwin" else font.setPointSize(pt_size * .75)
+        font.setPointSize(pt_size) if platform.system() == "Darwin" else font.setPointSize(int(pt_size * .75))
         font.setFamily(family)
         font.setWeight(50)
         return font

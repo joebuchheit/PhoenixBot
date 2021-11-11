@@ -25,7 +25,7 @@ class PollBrowserDialog(QtWidgets.QDialog):
 
         self.background.setStyleSheet("* {background-color: {}} QPushButton { background-color: %s;color: #FFFFFF;}" % (globalStyles["primary"]) .format(globalStyles["backgroundDark"]))
         font = QtGui.QFont()
-        font.setPointSize(16) if platform.system() == "Darwin" else font.setPointSize(16 * .75)
+        font.setPointSize(16) if platform.system() == "Darwin" else font.setPointSize(int(16 * .75))
         font.setFamily("Arial")
 
         self.label = QtWidgets.QLabel(self.background)
