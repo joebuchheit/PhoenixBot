@@ -119,7 +119,8 @@ class Target:
     def fill_and_authenticate(self):
 
         # slowly enters username and password with random waits between each character
-
+        self.status_signal.emit(create_msg("Login Loading...","normal"))
+        time.sleep(3)
         if self.browser.find_elements_by_id('username'):
             for key in settings.target_user:
                 self.browser.find_element_by_xpath('//input[@id="username"]').send_keys(key)
